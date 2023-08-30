@@ -1,12 +1,8 @@
-;; (declaim (optimize (speed 0) (safety 2) (debug 3)))
-
-;; (load (compile-file "~/Programming/Lisp/lispy-experiments/xml.lisp"))
 (in-package #:ui-xml-generator)
 
 (defun xml-intro (&key (version "1.0") (encoding "UTF-8"))
   (format nil "<?xml version=~S encoding=~S?>" version encoding))
 
-(defparameter *indent* 0)
 (defparameter *indent-by* 2)
 
 (defun add-indentation (indent string)
