@@ -15,6 +15,8 @@ experiments with Gtk 4 user interface creation.
 
 **** example use
 
+Run this in your REPL.
+
 #+begin_src lisp
   (ui-xml-generator:xml-string
    '(:interface nil :children
@@ -38,6 +40,13 @@ experiments with Gtk 4 user interface creation.
 
 *** Using it in other projects
 
-If you use SBCL and quicklisp, either symlink it or copy it to
+If you use SBCL and quicklisp, either copy or symlink it to
 quicklisp/local-projects
-and add it to asd file of your project.
+and add it to the asd file of your project, in the ~:depends-on~ section.
+
+symlink example
+
+#+begin_example
+cd ~/quicklisp/local-projects
+ln -s ~/Programming/Lisp/ui-xml-generator ./ui-xml-generator
+#+end_example
