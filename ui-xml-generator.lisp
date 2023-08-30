@@ -32,9 +32,7 @@
             ()
             "attrs ~s should not be quoted" attrs)
     (assert (evenp (length attrs)))
-    ;; (assert (member next '(:content :children)))
 
-    ;; (break "next is ~S" next)
     (ecase next
       (:content
        (assert (eq 1 (length cx)))
@@ -42,16 +40,13 @@
                        :none)
                    (typep (first cx)
                           'string)))
-       ;; printing content
        (format nil "~A"
                (add-indentation indent
                                 (if (eq (first cx) :none)
-                                        ;then
                                     (format nil "<~A/>"
                                             (attributes-string
                                              (string-downcase tag)
                                              attrs))
-                                        ;else
                                     (format nil "<~A>~A</~A>"
                                             (attributes-string
                                              (string-downcase tag)
@@ -61,7 +56,6 @@
       (:children
        (assert (typep (first cx)
                       'cons))
-       ;; printing children
        (format nil "~&~A~&~A~&~A"
                (add-indentation indent
                                 (format nil "<~A>"
