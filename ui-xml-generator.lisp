@@ -67,8 +67,9 @@
                       collect (read-tags c (1+ indent)))
                 (format nil "~%"))
 
-               (format nil "~A" (add-indentation indent
-                                                 (format nil "</~A>" (string-downcase tag)))))))))
+               (format nil "~A"
+                       (add-indentation indent
+                                        (format nil "</~A>" (string-downcase tag)))))))))
 
 (defun xml-string (tree)
   (serapeum:string-join (list (xml-intro)
