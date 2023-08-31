@@ -65,7 +65,7 @@
                (serapeum:string-join
                 (loop for c in cx
                       collect (read-tags c (1+ indent)))
-                (format nil "~%"))
+                (string #\Newline))
 
                (format nil "~A"
                        (add-indentation indent
@@ -74,4 +74,4 @@
 (defun xml-string (tree)
   (serapeum:string-join (list (xml-intro)
                               (read-tags tree))
-                        (format nil "~%")))
+                        (string #\Newline)))
